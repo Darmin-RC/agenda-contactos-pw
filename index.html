@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda de Contactos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <header class="toolbar">
+        <div class="menu-icon" id="menuToggle">
+            <i class="material-icons">menu</i>
+        </div>
+        <h1 class="toolbar-title">Agenda de Contactos</h1>
+    </header>
+
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>Menú</h2>
+            <div class="close-menu" id="closeMenu">
+                <i class="material-icons">close</i>
+            </div>
+        </div>
+        <ul class="sidebar-menu">
+            <li class="menu-item active" data-route="contacts">
+                <i class="material-icons">contacts</i>
+                <span>Ver Contactos</span>
+            </li>
+            <li class="menu-item" data-route="add-contact">
+                <i class="material-icons">person_add</i>
+                <span>Agregar Contacto</span>
+            </li>
+            <li class="menu-item" data-route="about">
+                <i class="material-icons">info</i>
+                <span>Acerca de</span>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="overlay" id="overlay"></div>
+
+    <main class="main-container">
+        <section class="page" id="contacts-page">
+            <div class="contacts-container">
+                <h2>Lista de Contactos</h2>
+                <div id="contactsList" class="contacts-list">
+                </div>
+            </div>
+        </section>
+
+        <section class="page hidden" id="add-contact-page">
+            <div class="form-container">
+                <h2>Agregar Nuevo Contacto</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="apellido">Apellido:</label>
+                        <input type="text" id="apellido" name="apellido" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono:</label>
+                        <input type="text" id="telefono" name="telefono" required>
+                    </div>
+                    <button type="submit" class="btn">Guardar Contacto</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="page hidden" id="about-page">
+            <div class="about-container">
+                <h2>Acerca de la Aplicación</h2>
+                <p>Esta es una aplicación de agenda de contactos desarrollada como parte de la Tarea 3: Agenda Multicapas.</p>
+                <p>La aplicación permite gestionar contactos utilizando una API externa para almacenar y recuperar la información.</p>
+                <p>Desarrollado con HTML, CSS y JavaScript.</p>
+            </div>
+        </section>
+    </main>
+
+    <div class="fab" id="addContactFab">
+        <i class="material-icons">add</i>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
